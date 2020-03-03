@@ -34,11 +34,13 @@ export default {
 }
 
 .item-img-wrapper {
+  // min-height: 200px;
   overflow: hidden;
   height: 0;
   padding-bottom: 37.09%;
   .item-img {
     width: 100%;
+    object-fit: cover;
   }
 }
 

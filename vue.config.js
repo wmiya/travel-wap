@@ -8,7 +8,15 @@ module.exports = {
                 pathRewrite: {
                     "^/api": "/mock"
                 }
-            }
+            },
+            "/search": {
+                target: "http://cp-tools.cn",
+                changeOrigin: true,
+                pathRewrite: {
+                    "^/search": "/search"
+                }
+            },
+
         }
     },
     css: {

@@ -29,7 +29,8 @@ export default {
       iconList: [],
       recommendList: [],
       weekendList: [],
-      lastCity: ''
+      lastCity: '',
+      list: []
     }
   },
   computed: {
@@ -38,21 +39,45 @@ export default {
   mounted () {
     this.lastCity = this.city;
     this.getHomeInfo()
+    // this.getListInfo()
   },
   activated () {
     if (this.lastCity !== this.city) {
       this.lastCity = this.city;
       this.getHomeInfo()
+      // this.getListInfo()
     }
   },
   methods: {
+    async getListInfo () {
+      let { status, data: { count, pois } } = await this.axios.get(`/search/resultsByKeywords`, {
+        params: {
+          keyword: '旅游',
+          city: this.city
+        }
+      });
+      if (status === 200 && count > 0) {
+        let r = pois.filter(item => item.photos.length).map(item => {
+          return {
+            id: item.id,
+            title: item.name,
+            desc: item.type,
+            imgUrl: item.photos[0].url,
+          }
+        })
+        this.list = r.slice(0, 9)
+      } else {
+        this.list = []
+      }
+      this.weekendList = this.recommendList = this.list
+    },
     async getHomeInfo () {
       let { data: { data } } = await this.axios.get(`/api/index.json?city=${this.city}`);
       if (data) {
         this.swiperList = data.swiperList
         this.iconList = data.iconList
-        this.recommendList = data.recommendList
-        this.weekendList = data.weekendList
+        this.weekendList = data.weekendList;
+        this.recommendList = data.recommendList;
       }
     }
   }

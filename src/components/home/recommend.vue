@@ -26,14 +26,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 .title {
-  margin-top: 20px;
   height: 80px;
   line-height: 80px;
   background: #eee;
   text-indent: 20px;
 }
 ul {
-  padding: 10px 15px;
+  padding: 10px 15px 0;
 }
 .item {
   display: flex;

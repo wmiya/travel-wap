@@ -6,20 +6,26 @@
       <span class="iconfont iconmagnifier"></span>
       输入城市/景点/游玩主题
     </div>
-    <p class="header-right">北京</p>
+    <router-link to="city">
+      <p class="header-right">{{this.city}}</p>
+    </router-link>
   </header>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
-
+  computed: {
+    ...mapState(['city'])
+  },
 }
 </script>
 <style lang="scss" scoped>
+@import "../../assets/styles/varibles.scss";
 .header {
   display: flex;
   width: 100%;
   height: 84px;
-  background: #00bcd4;
+  background: $bgColor;
   color: #fff;
   line-height: 84px;
   .header-left {
@@ -49,10 +55,12 @@ export default {
     }
   }
   .header-right {
-    width: 107px;
+    min-width: 107px;
+    padding: 0 5px;
     float: right;
-    margin-left: 23px;
+    margin: 0 5px 0 13px;
     font-size: 27px;
+    color: #fff;
     &::after {
       content: "";
       width: 0;

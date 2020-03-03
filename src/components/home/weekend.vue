@@ -27,7 +27,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .title {
-  margin-top: 10px;
   height: 80px;
   line-height: 80px;
   background: #eee;

@@ -56,6 +56,7 @@ export default {
   height: 0;
   padding-bottom: 50%;
   padding-top: 10px;
+  margin: 5px 0 15px;
   .icon {
     float: left;
     width: 25%;

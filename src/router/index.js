@@ -11,12 +11,12 @@ export default new Router({
         }, {
             path: '/city',
             name: 'City',
-            component: import('../pages/city')
+            component: () => import('../pages/city')
         },
         {
             path: '/detail/:id',
             name: 'Detail',
-            component: import('../pages/detail')
+            component: () => import('../pages/detail')
         }
     ],
     scrollBehavior() {

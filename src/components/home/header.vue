@@ -3,7 +3,7 @@
     <a class="header-left iconfont iconleft"
        href="javascript:;"></a>
     <div class="header-input">
-      <span class="iconfont iconmagnifier"></span>
+      <span class="iconfont iconicon-Magnifier"></span>
       输入城市/景点/游玩主题
     </div>
     <router-link to="city">
@@ -14,6 +14,7 @@
 <script>
 import { mapState } from 'vuex'
 export default {
+  name: 'homeHeader',
   computed: {
     ...mapState(['city'])
   },
@@ -24,10 +25,10 @@ export default {
 .header {
   display: flex;
   width: 100%;
-  height: 84px;
+  height: $headerHeight;
   background: $bgColor;
   color: #fff;
-  line-height: 84px;
+  line-height: $headerHeight;
   .header-left {
     width: 80px;
     text-align: center;

@@ -12,6 +12,7 @@
 </template>
 <script>
 export default {
+  name: 'cityAlphabet',
   data () {
     return {
       list: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
@@ -38,8 +39,8 @@ export default {
           clearTimeout(this.timer)
         }
         this.timer = setTimeout(() => {
-          const clientY = e.touches[0].clientY - 72;
-          const index = Math.floor((clientY - this.startY) / 17);
+          const clientY = e.touches[0].clientY - 71;
+          const index = Math.floor((clientY - this.startY) / 18);
           if (index >= 0 && index < this.list.length) {
             this.$emit('change', this.list[index])
           }

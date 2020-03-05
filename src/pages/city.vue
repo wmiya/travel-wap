@@ -14,7 +14,7 @@ import citySearch from '../components/city/search'
 import cityList from '../components/city/list'
 import cityAlphabet from '../components/city/alphabet'
 export default {
-  name: 'home',
+  name: 'City',
   components: {
     cityHeader,
     citySearch,

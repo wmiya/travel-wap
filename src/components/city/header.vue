@@ -9,17 +9,17 @@
 </template>
 <script>
 export default {
-
+  name: 'cityHeader'
 }
 </script>
 <style lang="scss" scoped>
 @import "../../assets/styles/varibles.scss";
 .header {
   width: 100%;
-  height: 84px;
+  height: $headerHeight;
   background: $bgColor;
   color: #fff;
-  line-height: 84px;
+  line-height: $headerHeight;
   text-align: center;
   position: relative;
   .header-left {

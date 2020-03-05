@@ -22,6 +22,7 @@
 import { mapMutations } from 'vuex'
 import Bscroll from 'better-scroll'
 export default {
+  name: 'citySearch',
   props: {
     cities: Object
   },
@@ -38,7 +39,9 @@ export default {
     }
   },
   mounted () {
-    this.scroll = new Bscroll(this.$refs.search)
+    this.scroll = new Bscroll(this.$refs.search, {
+      click: true
+    })
   },
   methods: {
     handleCityClick (val) {

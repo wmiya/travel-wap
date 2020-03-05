@@ -2,9 +2,11 @@
   <div>
     <h3 class="title">热门推荐</h3>
     <ul>
-      <li class="item border-bottom"
-          v-for="item of list"
-          :key="item.id">
+      <router-link tag="li"
+                   class="item border-bottom"
+                   v-for="item of list"
+                   :key="item.id"
+                   :to="`detail/${item.id}`">
         <img class="item-img"
              :src="item.imgUrl"
              :alt="item.title">
@@ -13,12 +15,13 @@
           <dd class="item-desc">{{item.desc}}</dd>
           <dd class="item-button">查看详情</dd>
         </dl>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
 <script>
 export default {
+  name: 'homeRecommend',
   props: {
     list: Array
   }

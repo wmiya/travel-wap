@@ -15,7 +15,7 @@ import homeRecommend from '../components/home/recommend'
 import homeWeekend from '../components/home/weekend'
 import { mapState } from 'vuex'
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
     homeHeader,
     homeSwiper,

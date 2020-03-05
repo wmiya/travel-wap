@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="title">热门推荐</h3>
+    <h3 class="title">周末去哪儿</h3>
     <ul>
       <li class="item border-bottom"
           v-for="item of list"
@@ -20,6 +20,7 @@
 </template>
 <script>
 export default {
+  name: 'homeWeekend',
   props: {
     list: Array
   }

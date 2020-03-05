@@ -36,6 +36,7 @@
 import { mapState, mapMutations } from 'vuex'
 import Bscroll from 'better-scroll'
 export default {
+  name: 'cityList',
   props: {
     hot: Array,
     list: Object,
@@ -53,7 +54,9 @@ export default {
     ...mapMutations(['changeCity'])
   },
   mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
+    this.scroll = new Bscroll(this.$refs.wrapper, {
+      click: true
+    })
   },
   watch: {
     letter (newVal) {

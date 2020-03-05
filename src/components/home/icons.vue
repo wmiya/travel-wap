@@ -20,6 +20,7 @@
 </template>
 <script>
 export default {
+  name: 'homeIcons',
   props: {
     list: Array
   },

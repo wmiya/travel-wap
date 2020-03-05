@@ -13,6 +13,7 @@ import cityHeader from '../components/city/header'
 import citySearch from '../components/city/search'
 import cityList from '../components/city/list'
 import cityAlphabet from '../components/city/alphabet'
+import { data } from '../../public/mock/city.json'
 export default {
   name: 'City',
   components: {
@@ -29,7 +30,9 @@ export default {
     }
   },
   mounted () {
-    this.getCityInfo()
+    // this.getCityInfo()
+    this.hotCities = data.hotCities
+    this.cities = data.cities
   },
   methods: {
     async getCityInfo () {

@@ -14,6 +14,8 @@ import homeIcons from '../components/home/icons'
 import homeRecommend from '../components/home/recommend'
 import homeWeekend from '../components/home/weekend'
 import { mapState } from 'vuex'
+import { data } from '../../public/mock/index.json'
+
 export default {
   name: 'Home',
   components: {
@@ -38,13 +40,17 @@ export default {
   },
   mounted () {
     this.lastCity = this.city;
-    this.getHomeInfo()
+    this.swiperList = data.swiperList
+    this.iconList = data.iconList
+    this.weekendList = data.weekendList;
+    this.recommendList = data.recommendList;
+    // this.getHomeInfo()
     // this.getListInfo()
   },
   activated () {
     if (this.lastCity !== this.city) {
       this.lastCity = this.city;
-      this.getHomeInfo()
+      // this.getHomeInfo()
       // this.getListInfo()
     }
   },

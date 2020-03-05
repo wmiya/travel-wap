@@ -1,23 +1,24 @@
 module.exports = {
     devServer: {
-        proxy: {
-            "/api": {
-                target: "http://localhost:8080",
-                ws: true,
-                changeOrigin: true,
-                pathRewrite: {
-                    "^/api": "/mock"
-                }
-            },
-            "/search": {
-                target: "http://cp-tools.cn",
-                changeOrigin: true,
-                pathRewrite: {
-                    "^/search": "/search"
-                }
-            },
-
-        }
+        publicPath: process.env.NODE_ENV === 'production' ?
+            '/travel/' : '/',
+        // proxy: {
+        //     "/api": {
+        //         target: "http://localhost:8080",
+        //         ws: true,
+        //         changeOrigin: true,
+        //         pathRewrite: {
+        //             "^/api": "/mock"
+        //         }
+        //     },
+        //     "/search": {
+        //         target: "http://cp-tools.cn",
+        //         changeOrigin: true,
+        //         pathRewrite: {
+        //             "^/search": "/search"
+        //         }
+        //     },
+        // }
     },
     css: {
         loaderOptions: {

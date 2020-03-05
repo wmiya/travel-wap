@@ -13,6 +13,8 @@ import deatilBanner from '../components/detail/banner'
 import deatilHeader from '../components/detail/header'
 import deatilBaseinfo from '../components/detail/baseinfo'
 import deatilList from '../components/detail/list'
+import { data } from '../../public/mock/detail.json'
+
 
 export default {
   name: 'Detail',
@@ -47,7 +49,12 @@ export default {
     }
   },
   mounted () {
-    this.getDetailInfo()
+    // this.getDetailInfo()
+    this.sightName = data.sightName
+    this.bannerImg = data.bannerImg
+    this.gallaryImgs = data.gallaryImgs
+    this.list = data.categoryList
+
   }
 }
 </script>

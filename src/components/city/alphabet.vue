@@ -27,6 +27,7 @@ export default {
   methods: {
     handleLetterClick (e) {
       this.$emit('change', e.target.innerText)
+
     },
     handleTouchStart () {
       // 开始
